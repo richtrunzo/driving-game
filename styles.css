@@ -20,4 +20,10 @@ body {
 img {
   width: 20%;
   position: absolute;
+  animation-name: driveright;
+  animation-duration: 16ms;
 }
+
+/* @keyframes driverright {
+
+} */
