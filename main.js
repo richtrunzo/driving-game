@@ -38,10 +38,3 @@ function driveRight() {
     $car.style.left = data.x + 'px';
   }
 }
-
-// document.addEventListener('DOMContentLoaded', function (event) {
-//   function driveRight() {
-//     data.x++;
-//     $car.style.left = data.x + 'px';
-//   }
-// });
