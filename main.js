@@ -2,10 +2,10 @@
 var $car = document.querySelector('img');
 
 var data = {
-  north: $car.className = 'north',
-  south: $car.className = 'south',
-  west: $car.className = 'west',
-  east: $car.className = '',
+  north: false,
+  south: false,
+  west: false,
+  east: true,
   x: 0,
   y: 0,
   moving: false
@@ -13,13 +13,25 @@ var data = {
 
 document.addEventListener('keydown', function (event) {
   if (event.keyCode === 40) {
-    $car.className = data.south;
+    $car.className = 'south';
+    data.north = false;
+    data.south = true;
+    data.east = false;
+    data.west = false;
   } else if (event.keyCode === 38) {
-    $car.className = data.north;
+    $car.className = 'north';
+    data.north = true;
+    data.south = false;
+    data.east = false;
+    data.west = false;
   } else if (event.keyCode === 37) {
-    $car.className = data.west;
+    $car.className = 'west';
+    data.north = false;
+    data.south = false;
+    data.east = false;
+    data.west = true;
   } else if (event.keyCode === 39) {
-    $car.className = data.east;
+    $car.className = '';
   }
 });
 
