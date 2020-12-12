@@ -5,7 +5,9 @@ var data = {
   north: $car.className = 'north',
   south: $car.className = 'south',
   west: $car.className = 'west',
-  east: $car.className = ''
+  east: $car.className = '',
+  x: 0,
+  y: 0
 };
 
 document.addEventListener('keydown', function (event) {
@@ -18,5 +20,28 @@ document.addEventListener('keydown', function (event) {
   } else if (event.keyCode === 39) {
     $car.className = data.east;
   }
-
 });
+
+document.addEventListener('keydown', function (event) {
+  if (event.keyCode === 32) {
+    $moving = true;
+  }
+});
+
+window.setInterval(driveRight, 16);
+
+var $moving = false;
+
+function driveRight() {
+  if ($moving === true) {
+    data.x += 5;
+    $car.style.left = data.x + 'px';
+  }
+}
+
+// document.addEventListener('DOMContentLoaded', function (event) {
+//   function driveRight() {
+//     data.x++;
+//     $car.style.left = data.x + 'px';
+//   }
+// });
