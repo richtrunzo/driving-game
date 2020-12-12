@@ -24,8 +24,10 @@ document.addEventListener('keydown', function (event) {
 });
 
 document.addEventListener('keydown', function (event) {
-  if (event.keyCode === 32) {
+  if (event.keyCode === 32 && data.moving === false) {
     data.moving = true;
+  } else if (event.keyCode === 32 && data.moving === true) {
+    data.moving = false;
   }
 });
 
