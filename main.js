@@ -40,6 +40,9 @@ function drive() {
     $car.style.left = data.x + 'px';
   } if (data.moving === true && data.direction === 'north') {
     data.y -= 5;
-    $car.style.left = data.y + 'px';
+    $car.style.top = data.y + 'px';
+  } if (data.moving === true && data.direction === 'south') {
+    data.y += 5;
+    $car.style.top = data.y + 'px';
   }
 }
