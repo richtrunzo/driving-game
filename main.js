@@ -2,10 +2,7 @@
 var $car = document.querySelector('img');
 
 var data = {
-  north: false,
-  south: false,
-  west: false,
-  east: true,
+  direction: 'east',
   x: 0,
   y: 0,
   moving: false
@@ -13,26 +10,15 @@ var data = {
 
 document.addEventListener('keydown', function (event) {
   if (event.keyCode === 40) {
-    $car.className = 'south';
-    data.north = false;
-    data.south = true;
-    data.east = false;
-    data.west = false;
+    data.direction = 'south';
   } else if (event.keyCode === 38) {
-    $car.className = 'north';
-    data.north = true;
-    data.south = false;
-    data.east = false;
-    data.west = false;
+    data.direction = 'north';
   } else if (event.keyCode === 37) {
-    $car.className = 'west';
-    data.north = false;
-    data.south = false;
-    data.east = false;
-    data.west = true;
+    data.direction = 'west';
   } else if (event.keyCode === 39) {
-    $car.className = '';
+    data.direction = 'east';
   }
+  $car.className = data.direction;
 });
 
 document.addEventListener('keydown', function (event) {
@@ -43,9 +29,9 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
-window.setInterval(driveRight, 16);
+window.setInterval(drive, 16);
 
-function driveRight() {
+function drive() {
   if (data.moving === true) {
     data.x += 5;
     $car.style.left = data.x + 'px';
