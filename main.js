@@ -32,8 +32,14 @@ document.addEventListener('keydown', function (event) {
 window.setInterval(drive, 16);
 
 function drive() {
-  if (data.moving === true) {
+  if (data.moving === true && data.direction === 'east') {
     data.x += 5;
     $car.style.left = data.x + 'px';
+  } if (data.moving === true && data.direction === 'west') {
+    data.x -= 5;
+    $car.style.left = data.x + 'px';
+  } if (data.moving === true && data.direction === 'north') {
+    data.y -= 5;
+    $car.style.left = data.y + 'px';
   }
 }
