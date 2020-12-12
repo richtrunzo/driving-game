@@ -4,17 +4,14 @@ body {
 
 .south {
   transform: rotate(90deg);
-  transition: ease-in-out;
 }
 
 .west {
   transform: rotate(180deg);
-  transition: ease-in-out;
 }
 
 .north {
   transform: rotate(270deg);
-  transition: ease-in-out;
 }
 
 img {
