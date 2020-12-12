@@ -7,7 +7,8 @@ var data = {
   west: $car.className = 'west',
   east: $car.className = '',
   x: 0,
-  y: 0
+  y: 0,
+  moving: false
 };
 
 document.addEventListener('keydown', function (event) {
@@ -24,16 +25,14 @@ document.addEventListener('keydown', function (event) {
 
 document.addEventListener('keydown', function (event) {
   if (event.keyCode === 32) {
-    $moving = true;
+    data.moving = true;
   }
 });
 
 window.setInterval(driveRight, 16);
 
-var $moving = false;
-
 function driveRight() {
-  if ($moving === true) {
+  if (data.moving === true) {
     data.x += 5;
     $car.style.left = data.x + 'px';
   }
